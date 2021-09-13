@@ -1,5 +1,4 @@
 import {
-  AppBar,
   BottomNavigation,
   BottomNavigationAction,
   makeStyles,
@@ -8,10 +7,11 @@ import React, { useContext } from "react";
 import { Context } from "../pages/";
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   nav: {
     position: "fixed",
     bottom: 0,
+    left: 0,
     width: "100%",
   },
 }));
@@ -23,7 +23,6 @@ const Footer = () => {
   return (
     <BottomNavigation
       onChange={(_, newValue) => {
-        console.log({ newValue });
         setPage(newValue);
       }}
       className={classes.nav}
